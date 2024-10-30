@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/styles/style main.css">
+  <link rel="shortcut icon" href="/imagem/favicon.ico" type="image/x-icon">
+  <title>Rael Hub</title>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
+</head>
+
+<body>
+  <div id="tsparticles"></div>
+
+  <div class="introduction-container">
+    <h1>Rael Hub</h1>
+  </div>
+
+  <main style="display: none;">
+    <img src="/imagem/logo.jpg" alt="Rael Hub" class="Aumentar">
+    <p>Click here to get the script</p>
+    <button class="Click-here" id="Button-main">Click here</button>
+  </main>
+
+  <script>
+    
+    let lintroduction_Container = document.querySelector(".introduction-container");
+    let main_Container = document.querySelector("main");
+    let ButtonMain = document.getElementById("Button-main");
+
+    setTimeout(() => {
+      lintroduction_Container.style.display = "none";
+    }, 3000);
+
+    setTimeout(() => {
+      main_Container.style.display = "flex";
+    }, 3000);
+
+    ButtonMain.addEventListener("click", () => {
+      window.location.href = "https://discord.com/invite/W5MJbcz2Qz";
+    });
+
+    fetch('/configuration.json')
+    .then(response => response.json())
+    .then(config => {
+    tsParticles.load('tsparticles', config);
+    })
+    .catch(error => console.error('Erro ao carregar o arquivo JSON:', error));
+  
+  </script>
+
+</body>
+
+</html>
