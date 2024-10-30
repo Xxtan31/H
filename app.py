@@ -2,6 +2,10 @@ from flask import Flask, request, jsonify, render_template_string
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime, timedelta
 from flask_migrate import Migrate
+import os
+
+app.instance_path = '/tmp/instance'
+os.makedirs(app.instance_path, exist_ok=True)
 
 
 
